@@ -4,19 +4,22 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts-upgradeable/access/Ownable2StepUpgradeable.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "../types/DataTypes.sol";
-import "./logic/ReserveLogic.sol";
 import "../interfaces/ISFilToken.sol";
 import "../interfaces/ILendingPool.sol";
 import "../interfaces/IVariableDebtToken.sol";
+import "./logic/ReserveLogic.sol";
 import "./logic/GenericLogic.sol";
 import "../helper/PercentageMath.sol";
+import "../types/DataTypes.sol";
 
 
 contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
     using ReserveLogic for DataTypes.ReserveData;
     using SafeERC20 for IERC20;
     using PercentageMath for uint256;
+
+    uint256 public constant HEALTH_FACTOR_LIQUIDATION_THRESHOLD = 1 ether;
+    uint256 public constant RAY = 1e27;
 
     address public filToken;
     address public sftToken;
@@ -52,6 +55,8 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
         reserve.reserveFactor = _reserveFactor;
         reserve.ltv = _ltv;
         reserve.liquidationThreshold = _liquidationThreshold;
+        reserve.liquidityIndex = uint128(RAY);
+        reserve.variableBorrowIndex = uint128(RAY);
     }
 
     function setDistributor(address newDistributor) external onlyOwner {
@@ -101,6 +106,17 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
         healthFactor = GenericLogic.calculateHealthFactor(totalCollateral, totalDebt, reserve.liquidationThreshold);
     }
 
+    function getUtilizationRate() public view returns (uint utilizationRate) {
+        uint totalDebt = IERC20(reserve.variableDebtTokenAddress).totalSupply();
+        uint availableLiquidity = IERC20(filToken).balanceOf(reserve.sFilTokenAddress);
+        utilizationRate = totalDebt == 0 ? 0 : totalDebt / (totalDebt + availableLiquidity);
+    }
+
+    function getMaxUnpledgeAmount(address user) public view returns (uint maxUnpledgeAmount) {
+        (uint totalCollateral, uint totalDebt, , ) = getUserAccountData(user);
+        maxUnpledgeAmount = totalDebt == 0 ? totalCollateral : totalCollateral - totalDebt.percentDiv(reserve.ltv);
+    }
+
 
     /**
      * @dev Deposits an `amount` of FIL into the reserve, receiving equivalent sFIL in return.
@@ -121,7 +137,7 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
     /**
      * @dev Withdraws an `amount` of FIL from the reserve, burning the equivalent sFIL owned
      * @param amount The FIL amount to be withdrawn
-     *   - Send the value type(uint256).max in order to withdraw the whole aToken balance
+     *   - Send the value type(uint256).max in order to withdraw the whole sFIL balance
      * @param to Address that will receive the underlying, same as msg.sender if the user
      *   wants to receive it on his own wallet, or a different address if the beneficiary is a
      *   different wallet
@@ -130,11 +146,7 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
     function withdraw(uint amount, address to) external returns (uint) {
         address sFilToken = reserve.sFilTokenAddress;
         uint userBalance = ISFilToken(sFilToken).balanceOf(address(msg.sender));
-        require(amount <= userBalance, "NOT_ENOUGH_AVAILABLE_USER_BALANCE");
-        uint256 amountToWithdraw = amount;
-        if (amount == type(uint256).max) {
-            amountToWithdraw = userBalance;
-        }
+        uint256 amountToWithdraw = amount >= userBalance ? userBalance : amount;
         reserve.updateState();
         reserve.updateInterestRates(filToken, sFilToken, 0, amountToWithdraw);
         ISFilToken(sFilToken).burn(address(msg.sender), to, amountToWithdraw, reserve.liquidityIndex);
@@ -151,23 +163,29 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
     function pledge(uint amount, address onBehalfOf) external {
         require(IERC20(sftToken).allowance(address(msg.sender), address(this)) >= amount, "SFT_APPROVE_NOT_ENOUGH");
         require(IERC20(sftToken).balanceOf(address(msg.sender)) >= amount, "SFT_BALANCE_NOT_ENOUGH");
+        reserve.updateState();
+        reserve.updateInterestRates(filToken, reserve.sFilTokenAddress, 0, 0);
         IERC20(sftToken).safeTransferFrom(address(msg.sender), address(this), amount);
         pledges[onBehalfOf] += amount;
         emit Pledge(msg.sender, onBehalfOf, amount);
     }
 
     /**
-     * @dev unpledge an `amount` of SFT from the pool
+     * @dev unpledge an `amount` of SFT from the pool, can't cause totalDebt > totalCollateral * ltv
      * @param amount The amount of SFT
+     *   - Send the value type(uint256).max in order to unpledge the max amount you can unpledge
      */
     function unpledge(uint amount) external {
-        require(amount <= pledges[msg.sender], "UNPLEDGE_AMOUNT_NOT_ENOUGH");
-        uint totalCollateral = pledges[msg.sender] - amount;
-        uint totalDebt = IERC20(reserve.variableDebtTokenAddress).balanceOf(address(msg.sender));
-        require(totalCollateral.percentMul(reserve.ltv) >= totalDebt, "INVALID_AMOUNT");
-        pledges[msg.sender] -= amount;
-        IERC20(sftToken).safeTransfer(address(msg.sender), amount);
-        emit Unpledge(msg.sender, amount);
+        uint maxUnpledgeAmount = getMaxUnpledgeAmount(msg.sender);
+        uint actualUnpledgeAmount =  amount >= maxUnpledgeAmount ? maxUnpledgeAmount : amount;
+        // uint totalCollateral = pledges[msg.sender] - amount;
+        // uint totalDebt = IERC20(reserve.variableDebtTokenAddress).balanceOf(address(msg.sender));
+        // require(totalCollateral.percentMul(reserve.ltv) >= totalDebt, "INVALID_AMOUNT");
+        reserve.updateState();
+        reserve.updateInterestRates(filToken, reserve.sFilTokenAddress, 0, 0);
+        pledges[msg.sender] -= actualUnpledgeAmount;
+        IERC20(sftToken).safeTransfer(address(msg.sender), actualUnpledgeAmount);
+        emit Unpledge(msg.sender, actualUnpledgeAmount);
     }
 
     /**
@@ -194,13 +212,12 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
      * @return The final amount repaid
      **/
     function repay(uint amount, address onBehalfOf) public returns (uint) {
-        
         uint256 margin = 0; // user actual need transfered FIL amount
         uint256 userDebt = IERC20(reserve.variableDebtTokenAddress).balanceOf(onBehalfOf);
         uint256 userRewards = rewards[address(msg.sender)];
         uint paybackAmount = amount < userDebt? amount : userDebt;
         uint256 rewardsToRepay = userRewards >= paybackAmount? paybackAmount : userRewards;
-        margin = paybackAmount - rewardsToRepay;
+        margin = paybackAmount - rewardsToRepay; // user actually need transfered FIL
         
         require(IERC20(filToken).allowance(address(msg.sender), address(this)) >= margin, "FIL_ALLOWANCE_NOT_ENOUGH");
         require(IERC20(filToken).balanceOf(address(msg.sender)) >= margin, "FIL_BALANCE_NOT_ENOUGH");
@@ -208,7 +225,9 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
         IVariableDebtToken(reserve.variableDebtTokenAddress).burn(onBehalfOf, paybackAmount, reserve.variableBorrowIndex);
         address sFILToken = reserve.sFilTokenAddress;
         reserve.updateInterestRates(filToken, sFILToken, paybackAmount, 0);
-        IERC20(filToken).safeTransferFrom(msg.sender, reserve.sFilTokenAddress, margin);
+        if (margin > 0) {
+            IERC20(filToken).safeTransferFrom(msg.sender, reserve.sFilTokenAddress, margin);
+        }
         rewards[msg.sender] -= rewardsToRepay;
         IERC20(filToken).safeTransfer(reserve.sFilTokenAddress, rewardsToRepay);
         emit Repay(msg.sender, onBehalfOf, paybackAmount, rewardsToRepay, margin);
@@ -223,13 +242,14 @@ contract LendingPool is ILendingPool, Ownable2StepUpgradeable {
     function liquidate(address user) external {
         ( ,uint totalDebt, ,uint healthFactor) = getUserAccountData(user);
         require(
-            healthFactor < GenericLogic.HEALTH_FACTOR_LIQUIDATION_THRESHOLD,
+            healthFactor < HEALTH_FACTOR_LIQUIDATION_THRESHOLD,
             "HEALTH_FACTOR_ABOVE_THRESHOLD"
         );
+        uint totalCollateral = pledges[user];
         repay(totalDebt, user);
-        IERC20(sftToken).transfer(address(msg.sender), pledges[user]);
+        IERC20(sftToken).transfer(address(msg.sender), totalCollateral);
         delete pledges[user];
-        emit Liquidate(msg.sender, user, totalDebt, pledges[user]);
+        emit Liquidate(msg.sender, user, totalDebt, totalCollateral);
     }
 
     function distributeReward(address[] calldata userList, uint[] calldata rewardList, uint totalRewards) external {

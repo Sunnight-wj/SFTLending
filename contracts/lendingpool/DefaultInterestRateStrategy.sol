@@ -46,16 +46,16 @@ contract DefaultReserveInterestRateStrategy is IReserveInterestRateStrategy {
 
 
   constructor(
-    uint256 optimalUtilizationRate,
-    uint256 baseVariableBorrowRate,
-    uint256 variableRateSlope1,
-    uint256 variableRateSlope2
+    uint256 optimalUtilizationRate_,
+    uint256 baseVariableBorrowRate_,
+    uint256 variableRateSlope1_,
+    uint256 variableRateSlope2_
   ) {
-    OPTIMAL_UTILIZATION_RATE = optimalUtilizationRate;
-    EXCESS_UTILIZATION_RATE = WadRayMath.ray().sub(optimalUtilizationRate);
-    _baseVariableBorrowRate = baseVariableBorrowRate;
-    _variableRateSlope1 = variableRateSlope1;
-    _variableRateSlope2 = variableRateSlope2;
+    OPTIMAL_UTILIZATION_RATE = optimalUtilizationRate_;
+    EXCESS_UTILIZATION_RATE = WadRayMath.ray().sub(optimalUtilizationRate_);
+    _baseVariableBorrowRate = baseVariableBorrowRate_;
+    _variableRateSlope1 = variableRateSlope1_;
+    _variableRateSlope2 = variableRateSlope2_;
   }
 
   function variableRateSlope1() external view returns (uint256) {

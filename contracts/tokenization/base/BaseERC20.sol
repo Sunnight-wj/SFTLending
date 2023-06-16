@@ -266,7 +266,7 @@ contract BaseERC20 is Context, IERC20, IERC20Metadata {
             // Overflow not possible: balance + amount is at most totalSupply + amount, which is checked above.
             _balances[account] += amount;
         }
-        emit Transfer(address(0), account, amount);
+        // emit Transfer(address(0), account, amount);
 
         _afterTokenTransfer(address(0), account, amount);
     }
@@ -295,7 +295,7 @@ contract BaseERC20 is Context, IERC20, IERC20Metadata {
             _totalSupply -= amount;
         }
 
-        emit Transfer(account, address(0), amount);
+        // emit Transfer(account, address(0), amount);
 
         _afterTokenTransfer(account, address(0), amount);
     }

@@ -1,0 +1,268 @@
+{
+  "address": "0x4cBa49407Cf9489E9eEecBE2b65750f851F1eeD7",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "optimalUtilizationRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "baseVariableBorrowRate_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "variableRateSlope1_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "variableRateSlope2_",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "EXCESS_UTILIZATION_RATE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "OPTIMAL_UTILIZATION_RATE",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "baseVariableBorrowRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "reserve",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "sFilToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "liquidityAdded",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "liquidityTaken",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVariableDebt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reserveFactor",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateInterestRates",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "availableLiquidity",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalVariableDebt",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "reserveFactor",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateInterestRates",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getMaxVariableBorrowRate",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "variableRateSlope1",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "variableRateSlope2",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x9ec5f3bdb673cdc69fc32be7e73c8d9136f7a65631b30028bae5dc8b0743bf55",
+  "receipt": {
+    "to": null,
+    "from": "0x49554923b9361e158Fb267B436f843a4f537D53a",
+    "contractAddress": "0x4cBa49407Cf9489E9eEecBE2b65750f851F1eeD7",
+    "transactionIndex": 2,
+    "gasUsed": "538705",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xf304f8f346ddfe0882970e7e6abdad053b3079cbf896cc42154a171f095d5ffe",
+    "transactionHash": "0x9ec5f3bdb673cdc69fc32be7e73c8d9136f7a65631b30028bae5dc8b0743bf55",
+    "logs": [],
+    "blockNumber": 30815979,
+    "cumulativeGasUsed": "1234867",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "800000000000000000000000000",
+    "0",
+    "40000000000000000000000000",
+    "1000000000000000000000000000"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "c1c96c2645a542398b32a9238f997f11",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"optimalUtilizationRate_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"baseVariableBorrowRate_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"variableRateSlope1_\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"variableRateSlope2_\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"EXCESS_UTILIZATION_RATE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"OPTIMAL_UTILIZATION_RATE\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseVariableBorrowRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"reserve\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sFilToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"liquidityAdded\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"liquidityTaken\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVariableDebt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveFactor\",\"type\":\"uint256\"}],\"name\":\"calculateInterestRates\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"availableLiquidity\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalVariableDebt\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"reserveFactor\",\"type\":\"uint256\"}],\"name\":\"calculateInterestRates\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getMaxVariableBorrowRate\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"variableRateSlope1\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"variableRateSlope2\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"The model of interest rate is based on 2 slopes, one before the `OPTIMAL_UTILIZATION_RATE` point of utilization and another from that one to 100% - An instance of this same contract, can't be used across different Aave markets, due to the caching   of the LendingPoolAddressesProvider*\",\"kind\":\"dev\",\"methods\":{\"calculateInterestRates(address,address,uint256,uint256,uint256,uint256)\":{\"details\":\"Calculates the interest rates depending on the reserve's state and configurations\",\"params\":{\"liquidityAdded\":\"The liquidity added during the operation\",\"liquidityTaken\":\"The liquidity taken during the operation\",\"reserve\":\"The address of the reserve\",\"reserveFactor\":\"The reserve portion of the interest that goes to the treasury of the market\",\"totalVariableDebt\":\"The total borrowed from the reserve at a variable rate\"},\"returns\":{\"_0\":\"The liquidity rate and the variable borrow rate*\"}},\"calculateInterestRates(uint256,uint256,uint256)\":{\"details\":\"Calculates the interest rates depending on the reserve's state and configurations. NOTE This function is kept for compatibility with the previous DefaultInterestRateStrategy interface. New protocol implementation uses the new calculateInterestRates() interface\",\"params\":{\"availableLiquidity\":\"The liquidity available in the corresponding aToken\",\"reserveFactor\":\"The reserve portion of the interest that goes to the treasury of the market\",\"totalVariableDebt\":\"The total borrowed from the reserve at a variable rate\"},\"returns\":{\"_0\":\"The liquidity rate and the variable borrow rate*\"}}},\"stateVariables\":{\"EXCESS_UTILIZATION_RATE\":{\"details\":\"This constant represents the excess utilization rate above the optimal. It's always equal to 1-optimal utilization rate. Added as a constant here for gas optimizations. Expressed in ray*\"},\"OPTIMAL_UTILIZATION_RATE\":{\"details\":\"this constant represents the utilization rate at which the pool aims to obtain most competitive borrow rates. Expressed in ray*\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Implements the calculation of the interest rates depending on the reserve state\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/lendingpool/DefaultInterestRateStrategy.sol\":\"DefaultReserveInterestRateStrategy\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(address from, address to, uint256 amount) external returns (bool);\\n}\\n\",\"keccak256\":\"0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/math/SafeMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.9.0) (utils/math/SafeMath.sol)\\n\\npragma solidity ^0.8.0;\\n\\n// CAUTION\\n// This version of SafeMath should only be used with Solidity 0.8 or later,\\n// because it relies on the compiler's built in overflow checks.\\n\\n/**\\n * @dev Wrappers over Solidity's arithmetic operations.\\n *\\n * NOTE: `SafeMath` is generally not needed starting with Solidity 0.8, since the compiler\\n * now has built in overflow checking.\\n */\\nlibrary SafeMath {\\n    /**\\n     * @dev Returns the addition of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryAdd(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            uint256 c = a + b;\\n            if (c < a) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function trySub(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b > a) return (false, 0);\\n            return (true, a - b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, with an overflow flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMul(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            // Gas optimization: this is cheaper than requiring 'a' not being zero, but the\\n            // benefit is lost if 'b' is also tested.\\n            // See: https://github.com/OpenZeppelin/openzeppelin-contracts/pull/522\\n            if (a == 0) return (true, 0);\\n            uint256 c = a * b;\\n            if (c / a != b) return (false, 0);\\n            return (true, c);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the division of two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryDiv(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a / b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers, with a division by zero flag.\\n     *\\n     * _Available since v3.4._\\n     */\\n    function tryMod(uint256 a, uint256 b) internal pure returns (bool, uint256) {\\n        unchecked {\\n            if (b == 0) return (false, 0);\\n            return (true, a % b);\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the addition of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `+` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Addition cannot overflow.\\n     */\\n    function add(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a + b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting on\\n     * overflow (when the result is negative).\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a - b;\\n    }\\n\\n    /**\\n     * @dev Returns the multiplication of two unsigned integers, reverting on\\n     * overflow.\\n     *\\n     * Counterpart to Solidity's `*` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Multiplication cannot overflow.\\n     */\\n    function mul(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a * b;\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a / b;\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting when dividing by zero.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b) internal pure returns (uint256) {\\n        return a % b;\\n    }\\n\\n    /**\\n     * @dev Returns the subtraction of two unsigned integers, reverting with custom message on\\n     * overflow (when the result is negative).\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {trySub}.\\n     *\\n     * Counterpart to Solidity's `-` operator.\\n     *\\n     * Requirements:\\n     *\\n     * - Subtraction cannot overflow.\\n     */\\n    function sub(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b <= a, errorMessage);\\n            return a - b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the integer division of two unsigned integers, reverting with custom message on\\n     * division by zero. The result is rounded towards zero.\\n     *\\n     * Counterpart to Solidity's `/` operator. Note: this function uses a\\n     * `revert` opcode (which leaves remaining gas untouched) while Solidity\\n     * uses an invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function div(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a / b;\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the remainder of dividing two unsigned integers. (unsigned integer modulo),\\n     * reverting with custom message when dividing by zero.\\n     *\\n     * CAUTION: This function is deprecated because it requires allocating memory for the error\\n     * message unnecessarily. For custom revert reasons use {tryMod}.\\n     *\\n     * Counterpart to Solidity's `%` operator. This function uses a `revert`\\n     * opcode (which leaves remaining gas untouched) while Solidity uses an\\n     * invalid opcode to revert (consuming all remaining gas).\\n     *\\n     * Requirements:\\n     *\\n     * - The divisor cannot be zero.\\n     */\\n    function mod(uint256 a, uint256 b, string memory errorMessage) internal pure returns (uint256) {\\n        unchecked {\\n            require(b > 0, errorMessage);\\n            return a % b;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a\",\"license\":\"MIT\"},\"contracts/helper/PercentageMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity 0.8.9;\\r\\n\\r\\n/**\\r\\n * @title PercentageMath library\\r\\n * @notice Provides functions to perform percentage calculations\\r\\n * @dev Percentages are defined by default with 2 decimals of precision (100.00). The precision is indicated by PERCENTAGE_FACTOR\\r\\n * @dev Operations are rounded half up\\r\\n **/\\r\\n\\r\\nlibrary PercentageMath {\\r\\n  uint256 constant PERCENTAGE_FACTOR = 1e4; //percentage plus two decimals\\r\\n  uint256 constant HALF_PERCENT = PERCENTAGE_FACTOR / 2;\\r\\n\\r\\n  /**\\r\\n   * @dev Executes a percentage multiplication\\r\\n   * @param value The value of which the percentage needs to be calculated\\r\\n   * @param percentage The percentage of the value to be calculated\\r\\n   * @return The percentage of value\\r\\n   **/\\r\\n  function percentMul(uint256 value, uint256 percentage) internal pure returns (uint256) {\\r\\n    if (value == 0 || percentage == 0) {\\r\\n      return 0;\\r\\n    }\\r\\n\\r\\n    require(\\r\\n      value <= (type(uint256).max - HALF_PERCENT) / percentage,\\r\\n      \\\"MULTIPLICATION_OVERFLOW\\\"\\r\\n    );\\r\\n\\r\\n    return (value * percentage + HALF_PERCENT) / PERCENTAGE_FACTOR;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Executes a percentage division\\r\\n   * @param value The value of which the percentage needs to be calculated\\r\\n   * @param percentage The percentage of the value to be calculated\\r\\n   * @return The value divided the percentage\\r\\n   **/\\r\\n  function percentDiv(uint256 value, uint256 percentage) internal pure returns (uint256) {\\r\\n    require(percentage != 0, \\\"MATH_DIVISION_BY_ZERO\\\");\\r\\n    uint256 halfPercentage = percentage / 2;\\r\\n\\r\\n    require(\\r\\n      value <= (type(uint256).max - halfPercentage) / PERCENTAGE_FACTOR,\\r\\n      \\\"MULTIPLICATION_OVERFLOW\\\"\\r\\n    );\\r\\n\\r\\n    return (value * PERCENTAGE_FACTOR + halfPercentage) / percentage;\\r\\n  }\\r\\n}\\r\\n\",\"keccak256\":\"0xad1b7bc18889bfa1d4b4ccf4b0470ce6d4f8b498eadcfa1910b5307f6ebe86b1\",\"license\":\"MIT\"},\"contracts/helper/WadRayMath.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity 0.8.9;\\r\\n\\r\\n/**\\r\\n * @title WadRayMath library\\r\\n * @dev Provides mul and div function for wads (decimal numbers with 18 digits precision) and rays (decimals with 27 digits)\\r\\n **/\\r\\n\\r\\nlibrary WadRayMath {\\r\\n  uint256 internal constant WAD = 1e18;\\r\\n  uint256 internal constant halfWAD = WAD / 2;\\r\\n\\r\\n  uint256 internal constant RAY = 1e27;\\r\\n  uint256 internal constant halfRAY = RAY / 2;\\r\\n\\r\\n  uint256 internal constant WAD_RAY_RATIO = 1e9;\\r\\n\\r\\n  /**\\r\\n   * @return One ray, 1e27\\r\\n   **/\\r\\n  function ray() internal pure returns (uint256) {\\r\\n    return RAY;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @return One wad, 1e18\\r\\n   **/\\r\\n\\r\\n  function wad() internal pure returns (uint256) {\\r\\n    return WAD;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @return Half ray, 1e27/2\\r\\n   **/\\r\\n  function halfRay() internal pure returns (uint256) {\\r\\n    return halfRAY;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @return Half ray, 1e18/2\\r\\n   **/\\r\\n  function halfWad() internal pure returns (uint256) {\\r\\n    return halfWAD;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Multiplies two wad, rounding half up to the nearest wad\\r\\n   * @param a Wad\\r\\n   * @param b Wad\\r\\n   * @return The result of a*b, in wad\\r\\n   **/\\r\\n  function wadMul(uint256 a, uint256 b) internal pure returns (uint256) {\\r\\n    if (a == 0 || b == 0) {\\r\\n      return 0;\\r\\n    }\\r\\n\\r\\n    require(a <= (type(uint256).max - halfWAD) / b, \\\"MULTIPLICATION_OVERFLOW\\\");\\r\\n\\r\\n    return (a * b + halfWAD) / WAD;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Divides two wad, rounding half up to the nearest wad\\r\\n   * @param a Wad\\r\\n   * @param b Wad\\r\\n   * @return The result of a/b, in wad\\r\\n   **/\\r\\n  function wadDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\r\\n    require(b != 0, \\\"DIVISION_BY_ZERO\\\");\\r\\n    uint256 halfB = b / 2;\\r\\n\\r\\n    require(a <= (type(uint256).max - halfB) / WAD, \\\"MULTIPLICATION_OVERFLOW\\\");\\r\\n\\r\\n    return (a * WAD + halfB) / b;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Multiplies two ray, rounding half up to the nearest ray\\r\\n   * @param a Ray\\r\\n   * @param b Ray\\r\\n   * @return The result of a*b, in ray\\r\\n   **/\\r\\n  function rayMul(uint256 a, uint256 b) internal pure returns (uint256) {\\r\\n    if (a == 0 || b == 0) {\\r\\n      return 0;\\r\\n    }\\r\\n\\r\\n    require(a <= (type(uint256).max - halfRAY) / b, \\\"MULTIPLICATION_OVERFLOW\\\");\\r\\n\\r\\n    return (a * b + halfRAY) / RAY;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Divides two ray, rounding half up to the nearest ray\\r\\n   * @param a Ray\\r\\n   * @param b Ray\\r\\n   * @return The result of a/b, in ray\\r\\n   **/\\r\\n  function rayDiv(uint256 a, uint256 b) internal pure returns (uint256) {\\r\\n    require(b != 0, \\\"DIVISION_BY_ZERO\\\");\\r\\n    uint256 halfB = b / 2;\\r\\n\\r\\n    require(a <= (type(uint256).max - halfB) / RAY, \\\"MULTIPLICATION_OVERFLOW\\\");\\r\\n\\r\\n    return (a * RAY + halfB) / b;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Casts ray down to wad\\r\\n   * @param a Ray\\r\\n   * @return a casted to wad, rounded half up to the nearest wad\\r\\n   **/\\r\\n  function rayToWad(uint256 a) internal pure returns (uint256) {\\r\\n    uint256 halfRatio = WAD_RAY_RATIO / 2;\\r\\n    uint256 result = halfRatio + a;\\r\\n    require(result >= halfRatio, \\\"ADDITION_OVERFLOW\\\");\\r\\n\\r\\n    return result / WAD_RAY_RATIO;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Converts wad up to ray\\r\\n   * @param a Wad\\r\\n   * @return a converted in ray\\r\\n   **/\\r\\n  function wadToRay(uint256 a) internal pure returns (uint256) {\\r\\n    uint256 result = a * WAD_RAY_RATIO;\\r\\n    require(result / WAD_RAY_RATIO == a, \\\"MULTIPLICATION_OVERFLOW\\\");\\r\\n    return result;\\r\\n  }\\r\\n}\\r\\n\",\"keccak256\":\"0x66ec27b84b1e5fd32fcb02768b1794d147508a9ae007d7ad5c30231801b2c9f1\",\"license\":\"MIT\"},\"contracts/interfaces/IReserveInterestRateStrategy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity 0.8.9;\\r\\n\\r\\ninterface IReserveInterestRateStrategy {\\r\\n\\r\\n  function baseVariableBorrowRate() external view returns (uint256);\\r\\n\\r\\n  function getMaxVariableBorrowRate() external view returns (uint256);\\r\\n\\r\\n  function calculateInterestRates(\\r\\n    uint256 availableLiquidity,\\r\\n    uint256 totalVariableDebt,\\r\\n    uint256 reserveFactor\\r\\n  )\\r\\n    external\\r\\n    view\\r\\n    returns (\\r\\n      uint256,\\r\\n      uint256\\r\\n    );\\r\\n\\r\\n  function calculateInterestRates(\\r\\n    address reserve,\\r\\n    address aToken,\\r\\n    uint256 liquidityAdded,\\r\\n    uint256 liquidityTaken,\\r\\n    uint256 totalVariableDebt,\\r\\n    uint256 reserveFactor\\r\\n  )\\r\\n    external\\r\\n    view\\r\\n    returns (\\r\\n      uint256 liquidityRate,\\r\\n      uint256 variableBorrowRate\\r\\n    );\\r\\n}\",\"keccak256\":\"0x328119369d84470715d113a584fbbaa6631d6648a7da6a5d8fd6d8dff08e2b7a\",\"license\":\"MIT\"},\"contracts/lendingpool/DefaultInterestRateStrategy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\r\\npragma solidity ^0.8.9;\\r\\n\\r\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\r\\nimport \\\"@openzeppelin/contracts/utils/math/SafeMath.sol\\\";\\r\\nimport \\\"../helper/WadRayMath.sol\\\";\\r\\nimport \\\"../helper/PercentageMath.sol\\\";\\r\\nimport \\\"../interfaces/IReserveInterestRateStrategy.sol\\\";\\r\\n\\r\\n\\r\\n/**\\r\\n * @notice Implements the calculation of the interest rates depending on the reserve state\\r\\n * @dev The model of interest rate is based on 2 slopes, one before the `OPTIMAL_UTILIZATION_RATE`\\r\\n * point of utilization and another from that one to 100%\\r\\n * - An instance of this same contract, can't be used across different Aave markets, due to the caching\\r\\n *   of the LendingPoolAddressesProvider\\r\\n **/\\r\\ncontract DefaultReserveInterestRateStrategy is IReserveInterestRateStrategy {\\r\\n    using WadRayMath for uint256;\\r\\n    using SafeMath for uint256;\\r\\n    using PercentageMath for uint256;\\r\\n\\r\\n    /**\\r\\n   * @dev this constant represents the utilization rate at which the pool aims to obtain most competitive borrow rates.\\r\\n   * Expressed in ray\\r\\n   **/\\r\\n  uint256 public immutable OPTIMAL_UTILIZATION_RATE;\\r\\n\\r\\n  /**\\r\\n   * @dev This constant represents the excess utilization rate above the optimal. It's always equal to\\r\\n   * 1-optimal utilization rate. Added as a constant here for gas optimizations.\\r\\n   * Expressed in ray\\r\\n   **/\\r\\n\\r\\n  uint256 public immutable EXCESS_UTILIZATION_RATE;\\r\\n\\r\\n\\r\\n  // Base variable borrow rate when Utilization rate = 0. Expressed in ray\\r\\n  uint256 internal immutable _baseVariableBorrowRate;\\r\\n\\r\\n  // Slope of the variable interest curve when utilization rate > 0 and <= OPTIMAL_UTILIZATION_RATE. Expressed in ray\\r\\n  uint256 internal immutable _variableRateSlope1;\\r\\n\\r\\n  // Slope of the variable interest curve when utilization rate > OPTIMAL_UTILIZATION_RATE. Expressed in ray\\r\\n  uint256 internal immutable _variableRateSlope2;\\r\\n\\r\\n\\r\\n  constructor(\\r\\n    uint256 optimalUtilizationRate_,\\r\\n    uint256 baseVariableBorrowRate_,\\r\\n    uint256 variableRateSlope1_,\\r\\n    uint256 variableRateSlope2_\\r\\n  ) {\\r\\n    OPTIMAL_UTILIZATION_RATE = optimalUtilizationRate_;\\r\\n    EXCESS_UTILIZATION_RATE = WadRayMath.ray().sub(optimalUtilizationRate_);\\r\\n    _baseVariableBorrowRate = baseVariableBorrowRate_;\\r\\n    _variableRateSlope1 = variableRateSlope1_;\\r\\n    _variableRateSlope2 = variableRateSlope2_;\\r\\n  }\\r\\n\\r\\n  function variableRateSlope1() external view returns (uint256) {\\r\\n    return _variableRateSlope1;\\r\\n  }\\r\\n\\r\\n  function variableRateSlope2() external view returns (uint256) {\\r\\n    return _variableRateSlope2;\\r\\n  }\\r\\n\\r\\n  function baseVariableBorrowRate() external view override returns (uint256) {\\r\\n    return _baseVariableBorrowRate;\\r\\n  }\\r\\n\\r\\n  function getMaxVariableBorrowRate() external view override returns (uint256) {\\r\\n    return _baseVariableBorrowRate.add(_variableRateSlope1).add(_variableRateSlope2);\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Calculates the interest rates depending on the reserve's state and configurations\\r\\n   * @param reserve The address of the reserve\\r\\n   * @param liquidityAdded The liquidity added during the operation\\r\\n   * @param liquidityTaken The liquidity taken during the operation\\r\\n   * @param totalVariableDebt The total borrowed from the reserve at a variable rate\\r\\n   * @param reserveFactor The reserve portion of the interest that goes to the treasury of the market\\r\\n   * @return The liquidity rate and the variable borrow rate\\r\\n   **/\\r\\n  function calculateInterestRates(\\r\\n    address reserve,\\r\\n    address sFilToken,\\r\\n    uint256 liquidityAdded,\\r\\n    uint256 liquidityTaken,\\r\\n    uint256 totalVariableDebt,\\r\\n    uint256 reserveFactor\\r\\n  )\\r\\n    external\\r\\n    view\\r\\n    override\\r\\n    returns (\\r\\n      uint256,\\r\\n      uint256\\r\\n    )\\r\\n  {\\r\\n    uint256 availableLiquidity = IERC20(reserve).balanceOf(sFilToken);\\r\\n    //avoid stack too deep\\r\\n    availableLiquidity = availableLiquidity.add(liquidityAdded).sub(liquidityTaken);\\r\\n\\r\\n    return\\r\\n      calculateInterestRates(\\r\\n        availableLiquidity,\\r\\n        totalVariableDebt,\\r\\n        reserveFactor\\r\\n      );\\r\\n  }\\r\\n\\r\\n  struct CalcInterestRatesLocalVars {\\r\\n    uint256 totalDebt;\\r\\n    uint256 currentVariableBorrowRate;\\r\\n    uint256 currentLiquidityRate;\\r\\n    uint256 utilizationRate;\\r\\n  }\\r\\n\\r\\n  /**\\r\\n   * @dev Calculates the interest rates depending on the reserve's state and configurations.\\r\\n   * NOTE This function is kept for compatibility with the previous DefaultInterestRateStrategy interface.\\r\\n   * New protocol implementation uses the new calculateInterestRates() interface\\r\\n   * @param availableLiquidity The liquidity available in the corresponding aToken\\r\\n   * @param totalVariableDebt The total borrowed from the reserve at a variable rate\\r\\n   * @param reserveFactor The reserve portion of the interest that goes to the treasury of the market\\r\\n   * @return The liquidity rate and the variable borrow rate\\r\\n   **/\\r\\n  function calculateInterestRates(\\r\\n    uint256 availableLiquidity,\\r\\n    uint256 totalVariableDebt,\\r\\n    uint256 reserveFactor\\r\\n  )\\r\\n    public\\r\\n    view\\r\\n    override\\r\\n    returns (\\r\\n      uint256,\\r\\n      uint256\\r\\n    )\\r\\n  {\\r\\n    CalcInterestRatesLocalVars memory vars;\\r\\n\\r\\n    vars.totalDebt = totalVariableDebt;\\r\\n    vars.currentVariableBorrowRate = 0;\\r\\n    vars.currentLiquidityRate = 0;\\r\\n\\r\\n    vars.utilizationRate = vars.totalDebt == 0\\r\\n      ? 0\\r\\n      : vars.totalDebt.rayDiv(availableLiquidity.add(vars.totalDebt));\\r\\n\\r\\n    if (vars.utilizationRate > OPTIMAL_UTILIZATION_RATE) {\\r\\n      uint256 excessUtilizationRateRatio =\\r\\n        vars.utilizationRate.sub(OPTIMAL_UTILIZATION_RATE).rayDiv(EXCESS_UTILIZATION_RATE);\\r\\n\\r\\n      vars.currentVariableBorrowRate = _baseVariableBorrowRate.add(_variableRateSlope1).add(\\r\\n        _variableRateSlope2.rayMul(excessUtilizationRateRatio)\\r\\n      );\\r\\n    } else {\\r\\n      vars.currentVariableBorrowRate = _baseVariableBorrowRate.add(\\r\\n        vars.utilizationRate.rayMul(_variableRateSlope1).rayDiv(OPTIMAL_UTILIZATION_RATE)\\r\\n      );\\r\\n    }\\r\\n\\r\\n    vars.currentLiquidityRate = \\r\\n      vars.currentVariableBorrowRate\\r\\n      .rayMul(vars.utilizationRate)\\r\\n      .percentMul(PercentageMath.PERCENTAGE_FACTOR.sub(reserveFactor));\\r\\n\\r\\n    return (\\r\\n      vars.currentLiquidityRate,\\r\\n      vars.currentVariableBorrowRate\\r\\n    );\\r\\n  }\\r\\n}\",\"keccak256\":\"0x06a48d34a04dc1479794f432ede58af0eea4fd5eb2e66e67c9c31e98c953006d\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x61012060405234801561001157600080fd5b50604051610a50380380610a5083398101604081905261003091610099565b83608081815250506100608461004e61007660201b6105191760201c565b61008660201b6105291790919060201c565b60a05260c09290925260e05261010052506100f4565b6b033b2e3c9fd0803ce800000090565b600061009282846100cf565b9392505050565b600080600080608085870312156100af57600080fd5b505082516020840151604085015160609095015191969095509092509050565b6000828210156100ef57634e487b7160e01b600052601160045260246000fd5b500390565b60805160a05160c05160e051610100516108c76101896000396000818160c9015281816101aa01526103d301526000818160ef015281816101ef0152818161041e015261047901526000818161016c015281816101ce015281816103fd01526104ad0152600081816092015261036d0152600081816101480152818161034101528181610391015261045501526108c76000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c806381c8c9721161005b57806381c8c9721461011b578063a15f30ac14610143578063b25895441461016a578063f66b69441461019057600080fd5b8063173198731461008d57806365614f81146100c75780637b832f58146100ed57806380031e3714610113575b600080fd5b6100b47f000000000000000000000000000000000000000000000000000000000000000081565b6040519081526020015b60405180910390f35b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b6100b46101a3565b61012e61012936600461073a565b61021e565b604080519283526020830191909152016100be565b6100b47f000000000000000000000000000000000000000000000000000000000000000081565b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b61012e61019e36600461078f565b6102d2565b60006102197f00000000000000000000000000000000000000000000000000000000000000006102137f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061053e565b9061053e565b905090565b6040516370a0823160e01b81526001600160a01b03868116600483015260009182918291908a16906370a082319060240160206040518083038186803b15801561026757600080fd5b505afa15801561027b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061029f91906107bb565b90506102b5866102af838a61053e565b90610529565b90506102c28186866102d2565b9250925050965096945050505050565b6000806103006040518060800160405280600081526020016000815260200160008152602001600081525090565b848152600060208201819052604082015284156103355780516103309061032890889061053e565b82519061054a565b610338565b60005b606082018190527f0000000000000000000000000000000000000000000000000000000000000000101561044d5760006103c97f00000000000000000000000000000000000000000000000000000000000000006103c37f0000000000000000000000000000000000000000000000000000000000000000856060015161052990919063ffffffff16565b9061054a565b90506104426103f87f000000000000000000000000000000000000000000000000000000000000000083610616565b6102137f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061053e565b6020830152506104d8565b6104d26104ab7f00000000000000000000000000000000000000000000000000000000000000006103c37f0000000000000000000000000000000000000000000000000000000000000000856060015161061690919063ffffffff16565b7f00000000000000000000000000000000000000000000000000000000000000009061053e565b60208201525b6105006104e761271086610529565b606083015160208401516104fa91610616565b906106b3565b6040820181905260209091015190969095509350505050565b6b033b2e3c9fd0803ce800000090565b600061053582846107ea565b90505b92915050565b60006105358284610801565b6000816105915760405162461bcd60e51b815260206004820152601060248201526f4449564953494f4e5f42595f5a45524f60801b60448201526064015b60405180910390fd5b600061059e600284610819565b90506b033b2e3c9fd0803ce80000006105b9826000196107ea565b6105c39190610819565b8411156105e25760405162461bcd60e51b81526004016105889061083b565b82816105fa6b033b2e3c9fd0803ce800000087610872565b6106049190610801565b61060e9190610819565b949350505050565b6000821580610623575081155b1561063057506000610538565b8161064860026b033b2e3c9fd0803ce8000000610819565b610654906000196107ea565b61065e9190610819565b83111561067d5760405162461bcd60e51b81526004016105889061083b565b6b033b2e3c9fd0803ce8000000610695600282610819565b61069f8486610872565b6106a99190610801565b6105359190610819565b60008215806106c0575081155b156106cd57506000610538565b816106db6002612710610819565b6106e7906000196107ea565b6106f19190610819565b8311156107105760405162461bcd60e51b81526004016105889061083b565b612710610695600282610819565b80356001600160a01b038116811461073557600080fd5b919050565b60008060008060008060c0878903121561075357600080fd5b61075c8761071e565b955061076a6020880161071e565b95989597505050506040840135936060810135936080820135935060a0909101359150565b6000806000606084860312156107a457600080fd5b505081359360208301359350604090920135919050565b6000602082840312156107cd57600080fd5b5051919050565b634e487b7160e01b600052601160045260246000fd5b6000828210156107fc576107fc6107d4565b500390565b60008219821115610814576108146107d4565b500190565b60008261083657634e487b7160e01b600052601260045260246000fd5b500490565b60208082526017908201527f4d554c5449504c49434154494f4e5f4f564552464c4f57000000000000000000604082015260600190565b600081600019048311821515161561088c5761088c6107d4565b50029056fea264697066735822122023df626bda23bb9496368c6e5897bd52ac40396152db1f97f3a3b10cd224cce464736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c806381c8c9721161005b57806381c8c9721461011b578063a15f30ac14610143578063b25895441461016a578063f66b69441461019057600080fd5b8063173198731461008d57806365614f81146100c75780637b832f58146100ed57806380031e3714610113575b600080fd5b6100b47f000000000000000000000000000000000000000000000000000000000000000081565b6040519081526020015b60405180910390f35b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b6100b46101a3565b61012e61012936600461073a565b61021e565b604080519283526020830191909152016100be565b6100b47f000000000000000000000000000000000000000000000000000000000000000081565b7f00000000000000000000000000000000000000000000000000000000000000006100b4565b61012e61019e36600461078f565b6102d2565b60006102197f00000000000000000000000000000000000000000000000000000000000000006102137f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061053e565b9061053e565b905090565b6040516370a0823160e01b81526001600160a01b03868116600483015260009182918291908a16906370a082319060240160206040518083038186803b15801561026757600080fd5b505afa15801561027b573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061029f91906107bb565b90506102b5866102af838a61053e565b90610529565b90506102c28186866102d2565b9250925050965096945050505050565b6000806103006040518060800160405280600081526020016000815260200160008152602001600081525090565b848152600060208201819052604082015284156103355780516103309061032890889061053e565b82519061054a565b610338565b60005b606082018190527f0000000000000000000000000000000000000000000000000000000000000000101561044d5760006103c97f00000000000000000000000000000000000000000000000000000000000000006103c37f0000000000000000000000000000000000000000000000000000000000000000856060015161052990919063ffffffff16565b9061054a565b90506104426103f87f000000000000000000000000000000000000000000000000000000000000000083610616565b6102137f00000000000000000000000000000000000000000000000000000000000000007f000000000000000000000000000000000000000000000000000000000000000061053e565b6020830152506104d8565b6104d26104ab7f00000000000000000000000000000000000000000000000000000000000000006103c37f0000000000000000000000000000000000000000000000000000000000000000856060015161061690919063ffffffff16565b7f00000000000000000000000000000000000000000000000000000000000000009061053e565b60208201525b6105006104e761271086610529565b606083015160208401516104fa91610616565b906106b3565b6040820181905260209091015190969095509350505050565b6b033b2e3c9fd0803ce800000090565b600061053582846107ea565b90505b92915050565b60006105358284610801565b6000816105915760405162461bcd60e51b815260206004820152601060248201526f4449564953494f4e5f42595f5a45524f60801b60448201526064015b60405180910390fd5b600061059e600284610819565b90506b033b2e3c9fd0803ce80000006105b9826000196107ea565b6105c39190610819565b8411156105e25760405162461bcd60e51b81526004016105889061083b565b82816105fa6b033b2e3c9fd0803ce800000087610872565b6106049190610801565b61060e9190610819565b949350505050565b6000821580610623575081155b1561063057506000610538565b8161064860026b033b2e3c9fd0803ce8000000610819565b610654906000196107ea565b61065e9190610819565b83111561067d5760405162461bcd60e51b81526004016105889061083b565b6b033b2e3c9fd0803ce8000000610695600282610819565b61069f8486610872565b6106a99190610801565b6105359190610819565b60008215806106c0575081155b156106cd57506000610538565b816106db6002612710610819565b6106e7906000196107ea565b6106f19190610819565b8311156107105760405162461bcd60e51b81526004016105889061083b565b612710610695600282610819565b80356001600160a01b038116811461073557600080fd5b919050565b60008060008060008060c0878903121561075357600080fd5b61075c8761071e565b955061076a6020880161071e565b95989597505050506040840135936060810135936080820135935060a0909101359150565b6000806000606084860312156107a457600080fd5b505081359360208301359350604090920135919050565b6000602082840312156107cd57600080fd5b5051919050565b634e487b7160e01b600052601160045260246000fd5b6000828210156107fc576107fc6107d4565b500390565b60008219821115610814576108146107d4565b500190565b60008261083657634e487b7160e01b600052601260045260246000fd5b500490565b60208082526017908201527f4d554c5449504c49434154494f4e5f4f564552464c4f57000000000000000000604082015260600190565b600081600019048311821515161561088c5761088c6107d4565b50029056fea264697066735822122023df626bda23bb9496368c6e5897bd52ac40396152db1f97f3a3b10cd224cce464736f6c63430008090033",
+  "devdoc": {
+    "details": "The model of interest rate is based on 2 slopes, one before the `OPTIMAL_UTILIZATION_RATE` point of utilization and another from that one to 100% - An instance of this same contract, can't be used across different Aave markets, due to the caching   of the LendingPoolAddressesProvider*",
+    "kind": "dev",
+    "methods": {
+      "calculateInterestRates(address,address,uint256,uint256,uint256,uint256)": {
+        "details": "Calculates the interest rates depending on the reserve's state and configurations",
+        "params": {
+          "liquidityAdded": "The liquidity added during the operation",
+          "liquidityTaken": "The liquidity taken during the operation",
+          "reserve": "The address of the reserve",
+          "reserveFactor": "The reserve portion of the interest that goes to the treasury of the market",
+          "totalVariableDebt": "The total borrowed from the reserve at a variable rate"
+        },
+        "returns": {
+          "_0": "The liquidity rate and the variable borrow rate*"
+        }
+      },
+      "calculateInterestRates(uint256,uint256,uint256)": {
+        "details": "Calculates the interest rates depending on the reserve's state and configurations. NOTE This function is kept for compatibility with the previous DefaultInterestRateStrategy interface. New protocol implementation uses the new calculateInterestRates() interface",
+        "params": {
+          "availableLiquidity": "The liquidity available in the corresponding aToken",
+          "reserveFactor": "The reserve portion of the interest that goes to the treasury of the market",
+          "totalVariableDebt": "The total borrowed from the reserve at a variable rate"
+        },
+        "returns": {
+          "_0": "The liquidity rate and the variable borrow rate*"
+        }
+      }
+    },
+    "stateVariables": {
+      "EXCESS_UTILIZATION_RATE": {
+        "details": "This constant represents the excess utilization rate above the optimal. It's always equal to 1-optimal utilization rate. Added as a constant here for gas optimizations. Expressed in ray*"
+      },
+      "OPTIMAL_UTILIZATION_RATE": {
+        "details": "this constant represents the utilization rate at which the pool aims to obtain most competitive borrow rates. Expressed in ray*"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Implements the calculation of the interest rates depending on the reserve state",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

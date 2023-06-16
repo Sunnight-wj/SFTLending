@@ -23,6 +23,10 @@ const config: HardhatUserConfig = {
       bscmain: "0x0D8Ce2A99Bb6e3B7Db580eD848240e4a0F9aE153",
       bsctest: "0xCb12e617C17598EDa4ebC2e8a75cb0698feEE829",
     },
+    sftTokenAddress: {
+      bscmain: "0xF9Dc0A2FB541C29026A798D116B2c6804DA1cAAa",
+      bsctest: "0xf1bD68640968C9788B7430218102c368fBBaa194",
+    },
     distributorAddress: {
       bscmain: "0x3BBFa3feDbb53323CD2beb754f20bDbb87D04bc1",
       bsctest: "0x49554923b9361e158Fb267B436f843a4f537D53a",
@@ -30,7 +34,12 @@ const config: HardhatUserConfig = {
     treasuryAddress: {
       bscmain: "0x3BBFa3feDbb53323CD2beb754f20bDbb87D04bc1",
       bsctest: "0x49554923b9361e158Fb267B436f843a4f537D53a",
+    },
+    proxyAdminAddress: {
+      bscmain: "0x5e549abf8626F1F52393B2Cad3c7e2CC3e89BD8b",
+      bsctest: "0xE2925750753e6C3e870B2ba8017837618F2d7602",
     }
+
     
   },
   defaultNetwork: "hardhat",
@@ -41,9 +50,9 @@ const config: HardhatUserConfig = {
       accounts,
     },
     bsctest: {
-      url: 'https://data-seed-prebsc-2-s2.binance.org:8545',
+      url: 'https://bsc-testnet.publicnode.com',
       chainId: 97,
-      gasMultiplier: 1.5,
+      gasMultiplier: 1.25,
       accounts,
     },
   },

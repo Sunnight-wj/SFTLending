@@ -2,13 +2,11 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
-import "./ReserveLogic.sol";
 import "../../types/DataTypes.sol";
 import "../../helper/WadRayMath.sol";
 import "../../helper/PercentageMath.sol";
 
 library GenericLogic {
-    using ReserveLogic for DataTypes.ReserveData;
     using SafeMath for uint256;
     using WadRayMath for uint256;
     using PercentageMath for uint256;
